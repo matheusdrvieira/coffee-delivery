@@ -4,12 +4,21 @@ export const Container = styled.div`
     main{
         padding: 5rem 10rem;
 
+        h2{
+            font-size: 2rem;
+            font-family: Baloo 2;
+            font-weight: 800;
+            line-height: 130%;
+        }
+
         section{
             display: flex;
+            flex-wrap: wrap;
+
             gap: 2rem;
+            margin-top: 3.30rem; 
         }
     }
-
 `
 
 export const Box = styled.div`
@@ -18,7 +27,7 @@ export const Box = styled.div`
     justify-content: space-between;
 
     gap: 3.5rem;
-    padding: 5.80rem 10rem 0;
+    padding: 5.80rem 10rem 5rem;
 
     .title{
         display: flex;
@@ -30,6 +39,8 @@ export const Box = styled.div`
             font-size: 3rem;
             font-weight: 800;
             line-height: 130%;
+
+            margin-bottom: 1rem;
         }
 
         p{
@@ -37,8 +48,6 @@ export const Box = styled.div`
             font-size: 1.25rem;
             font-family: Roboto;
             line-height: 130%;
-
-            margin-top: 1rem;
         }
 
         .info{

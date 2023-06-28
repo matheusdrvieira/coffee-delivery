@@ -3,11 +3,7 @@ import { Header } from "../../components/Header";
 import { CardCofee } from "../../components/CardCofee";
 import imgCofeeLogoHome from "../../assets/Imagem.svg"
 import { ShoppingCart, Timer, Package, Coffee } from "phosphor-react";
-
-import imgCofee1 from "../../assets/imgCofee.svg"
-import imgCofee2 from "../../assets/Image2.svg"
-import imgCofee3 from "../../assets/Image3.svg"
-import imgCofee4 from "../../assets/Image4.svg"
+import { API } from "../../service/staticApi";
 
 export function Home() {
 
@@ -65,37 +61,16 @@ export function Home() {
             </Box>
 
             <main>
+                <h2>Nossos cafés</h2>
                 <section>
-                    <CardCofee
-                        image={imgCofee1}
-                        tags={[{ id: 1, name: "Tradicional" }]}
-                        title="Expresso Tradicional"
-                        description="O tradicional café feito com água quente e grãos moídos"
-                        price={9.99}
-                    />
-
-                    <CardCofee
-                        image={imgCofee2}
-                        tags={[{ id: 1, name: "Tradicional" }, { id: 2, name: "gelado" }]}
-                        title="Latte"
-                        description="Uma dose de café expresso com o dobro de leite e espuma cremosa"
-                        price={9.99}
-                    />
-
-                    <CardCofee
-                        image={imgCofee3}
-                        tags={[{ id: 1, name: "Tradicional" }, { id: 2, name: "com leite" }]}
-                        title="Capuccino"
-                        description="Bebida com canela feita de doses iguais de café, leite e espuma"
-                        price={9.99}
-                    />
-                    <CardCofee
-                        image={imgCofee4}
-                        tags={[{ id: 1, name: "Tradicional" }, { id: 2, name: "alcoólico" }]}
-                        title="Macchiato"
-                        description="Café expresso misturado com um pouco de leite quente e espuma"
-                        price={9.99}
-                    />
+                    {
+                        API.map(data => (
+                            <CardCofee
+                                key={data.id}
+                                data={data}
+                            />
+                        ))
+                    }
                 </section >
             </main >
         </Container >

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 16rem;
-    height: 20rem;
+    height: 19.375rem;
 
     display: flex;
     flex-direction: column;
@@ -10,6 +10,7 @@ export const Container = styled.div`
     align-items: center;
     text-align: center;
     padding: 0 1.25rem;
+    margin-bottom: 1.25rem;
 
     border-radius: 6px 36px;
     background: ${props => props.theme["BACKGROUND_BASE_CARD"]};
@@ -19,7 +20,7 @@ export const Container = styled.div`
         height: 7.5rem;
         border-radius: 50%;
 
-        margin-top: -2rem ;
+        margin-top: -3rem ;
         margin-bottom: 1rem;
     }
 
@@ -75,29 +76,5 @@ export const Container = styled.div`
         justify-content: space-between;
 
         gap: 0.20rem;
-    }
-`
-
-export const InputNumber = styled.div`
-    display: flex;
-    align-items: center;
-
-    gap: 0.10rem;
-    padding: 0.5rem;
-    border-radius: 0.35rem;
-
-    background: ${props => props.theme["BACKGROUND_BASE_INPUT"]};
-
-    input[type=number]::-webkit-inner-spin-button { 
-        -webkit-appearance: none;
-    }
-
-    input[type=number] { 
-        width: 1.35rem;
-        -moz-appearance: textfield;
-        appearance: textfield;
-        border: none;
-
-        background: ${props => props.theme["BACKGROUND_BASE_INPUT"]};
     }
 `

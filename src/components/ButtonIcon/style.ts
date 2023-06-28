@@ -43,4 +43,11 @@ export const Container = styled.button<BackgroundProps>`
         color: ${props => props.theme.WHITE};
         background: ${props => props.theme["YELLOW_DARK"]};
     }
+
+    :hover{
+        background: ${(props) =>
+        props.backgroundColor === "PURPLE"
+            ? props.theme["PURPLE"]
+            : props.theme[BACKGROUND_COLOR[props.backgroundColor]]};
+    }
 `
