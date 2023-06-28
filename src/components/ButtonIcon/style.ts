@@ -1,6 +1,15 @@
 import styled from "styled-components";
 
-export const Container = styled.button`
+const BACKGROUND_COLOR = {
+    YELLOW: "YELLOW_LIGHT",
+    PURPLE: "PURPLE_DARK"
+} as const
+
+interface BackgroundProps {
+    backgroundColor: keyof typeof BACKGROUND_COLOR
+}
+
+export const Container = styled.button<BackgroundProps>`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,7 +20,7 @@ export const Container = styled.button`
     padding: 0.5rem;
     border-radius: 6px;
 
-    background: ${props => props.theme["YELLOW_LIGHT"]};
+    background: ${props => props.theme[BACKGROUND_COLOR[props.backgroundColor]]};
 
     span{
         width: 1.25rem;
@@ -31,7 +40,7 @@ export const Container = styled.button`
         font-size: 0.75rem;
         font-weight: 700;
 
-        color:  ${props => props.theme.WHITE};
+        color: ${props => props.theme.WHITE};
         background: ${props => props.theme["YELLOW_DARK"]};
     }
 `
