@@ -127,3 +127,18 @@ export const API = [
         price: 9.90
     }
 ]
+
+export const ORDER = [
+    {
+        id: 1,
+        image: imgCofee1,
+        title: "Expresso Tradicional",
+        price: 9.90
+    },
+    {
+        id: 2,
+        image: imgCofee6,
+        title: "Latte",
+        price: 9.90
+    }
+]
