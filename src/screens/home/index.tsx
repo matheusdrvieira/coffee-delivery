@@ -1,6 +1,7 @@
-import { IconInfo, Box, Container } from "./style";
+import { Box, Container } from "./style";
 import { Header } from "../../components/Header";
 import { CardCofee } from "../../components/CardCofee";
+import { IconSpan } from "../../components/IconSpan";
 import imgCofeeLogoHome from "../../assets/Imagem.svg"
 import { ShoppingCart, Timer, Package, Coffee } from "phosphor-react";
 import { API } from "../../service/staticApi";
@@ -21,17 +22,13 @@ export function Home() {
                     <div className="info">
                         <div className="boxInfo">
                             <div className="boxIconParagraph">
-                                <IconInfo backgroundColor={"YELLOW_DARK"}>
-                                    <ShoppingCart size={16} color="#fafafa" weight="fill" />
-                                </IconInfo>
+                                <IconSpan color={"YELLOW_DARK"} icon={<ShoppingCart size={16} color="#fafafa" weight="fill" />} />
                                 <p>
                                     Compra simples e segura
                                 </p>
                             </div>
                             <div className="boxIconParagraph">
-                                <IconInfo backgroundColor={"YELLOW"}>
-                                    <Timer size={16} color="#fafafa" weight="fill" />
-                                </IconInfo>
+                                <IconSpan color={"YELLOW"} icon={<Timer size={16} color="#fafafa" weight="fill" />} />
                                 <p>
                                     Entrega rápida e rastreada
                                 </p>
@@ -39,17 +36,13 @@ export function Home() {
                         </div>
                         <div className="boxInfo">
                             <div className="boxIconParagraph">
-                                <IconInfo backgroundColor={"BROWN"}>
-                                    <Package size={16} color="#fafafa" weight="fill" />
-                                </IconInfo>
+                                <IconSpan color={"BROWN"} icon={<Package size={16} color="#fafafa" weight="fill" />} />
                                 <p>
                                     Embalagem mantém o café intacto
                                 </p>
                             </div>
                             <div className="boxIconParagraph">
-                                <IconInfo backgroundColor={"PURPLE"}>
-                                    <Coffee size={16} color="#fafafa" weight="fill" />
-                                </IconInfo>
+                                <IconSpan color={"PURPLE"} icon={<Coffee size={16} color="#fafafa" weight="fill" />} />
                                 <p>
                                     O café chega fresquinho até você
                                 </p>
