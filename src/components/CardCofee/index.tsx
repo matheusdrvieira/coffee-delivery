@@ -3,6 +3,7 @@ import { TagsCofee } from "../TagsCofee"
 import { ShoppingCart } from "phosphor-react";
 import { ButtonIcon } from "../ButtonIcon";
 import { InputNumber } from "../InputNumber";
+import { useState } from "react";
 
 interface CardCofeeProps {
     id: number;
@@ -11,6 +12,7 @@ interface CardCofeeProps {
     title: string;
     description: string;
     price: number;
+    quantity: number
 }
 
 interface TagsProps {
@@ -18,7 +20,52 @@ interface TagsProps {
     name: string;
 }
 
+interface cofeeProps {
+    id: number,
+    image: string,
+    price: number
+    quantity: number
+}
+
 export function CardCofee(props: { data: CardCofeeProps }) {
+    const [quantity, setQuantity] = useState(1);
+
+    function handleAddCofee(data: CardCofeeProps) {
+        const cofee = {
+            id: data.id,
+            image: data.image,
+            title: data.title,
+            price: data.price,
+            quantity: quantity,
+        };
+
+        const storedOrders = JSON.parse(localStorage.getItem('@deliveryCofee:Order')!);
+
+        if (storedOrders) {
+            const updatedQuantityCofee = storedOrders.cofees.filter((c: cofeeProps) => {
+                if (c.id === cofee.id) {
+                    c.quantity += cofee.quantity
+                    return c
+                }
+            })
+
+            if (!updatedQuantityCofee.length) {
+                storedOrders.cofees.push(cofee)
+            }
+
+            persistOrder(cofee, storedOrders)
+        } else {
+            persistOrder(cofee, storedOrders)
+        }
+    }
+
+    function persistOrder(cofee: cofeeProps, storedOrders: cofeeProps) {
+        const order = storedOrders ? storedOrders : {
+            cofees: [cofee]
+        }
+        const ordersString = JSON.stringify(order);
+        localStorage.setItem('@deliveryCofee:Order', ordersString);
+    }
 
     return (
         <Container>
@@ -37,11 +84,14 @@ export function CardCofee(props: { data: CardCofeeProps }) {
             <div className="sectionBottonCard">
                 <span>R$ <strong>{props.data.price.toFixed(2)}</strong></span>
 
-                <InputNumber />
+                <InputNumber count={quantity} onCountChange={setQuantity} />
 
-                <ButtonIcon icon={<ShoppingCart size={20} color="#f4f4f4" weight="fill" />} background="PURPLE" />
+                <ButtonIcon
+                    icon={<ShoppingCart size={20} color="#f4f4f4" weight="fill" />}
+                    background="PURPLE"
+                    onClick={() => handleAddCofee(props.data)}
+                />
             </div>
-
         </Container>
     )
 }

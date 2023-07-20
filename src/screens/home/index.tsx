@@ -4,7 +4,7 @@ import { CardCofee } from "../../components/CardCofee";
 import { IconSpan } from "../../components/IconSpan";
 import imgCofeeLogoHome from "../../assets/Imagem.svg"
 import { ShoppingCart, Timer, Package, Coffee } from "phosphor-react";
-import { API } from "../../service/staticApi";
+import { Cofees } from "../../service/staticApi";
 
 export function Home() {
 
@@ -57,7 +57,7 @@ export function Home() {
                 <h2>Nossos cafés</h2>
                 <section>
                     {
-                        API.map(data => (
+                        Cofees.map(data => (
                             <CardCofee
                                 key={data.id}
                                 data={data}

@@ -16,10 +16,13 @@ export const Container = styled.div`
 
     input[type=number] { 
         width: 1.35rem;
-        -moz-appearance: textfield;
-        appearance: textfield;
-        border: none;
 
+        border: none;
+        text-align: center;
+
+        appearance: textfield;
+        -moz-appearance: textfield;
+        
         background: ${props => props.theme["BACKGROUND_BASE_INPUT"]};
     }
 

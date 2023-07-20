@@ -143,9 +143,51 @@ export const Form = styled.form`
             width: 11rem;
         }
 
-        input:nth-child(3){
+        select{
             width: 3.75rem;
+
+            display: flex;
+            align-items: center;
+            
+            border: none;
+            border-radius: 0.25rem;
+
+            font-size: 0.875rem;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 400;
+
+            color: ${props => props.theme["BACKGROUND_BASE_LABEL"]};
+            background: ${props => props.theme["BACKGROUND_BASE_INPUT"]};
         }
+    }
+`
+export const Input = styled.input`
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.25rem;
+    padding: 0.75rem;
+
+    border: none;
+    border-radius: 0.25rem;
+
+    font-size: 0.875rem;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+
+    background: ${props => props.theme["BACKGROUND_BASE_INPUT"]};
+
+    ::placeholder{
+        font-size: 0.875rem;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        color: ${props => props.theme["BACKGROUND_BASE_LABEL"]};
     }
 `
 
@@ -173,5 +215,9 @@ export const Button = styled.button`
 
     :hover{
         background: ${props => props.theme["YELLOW_DARK"]};
+    }
+
+    :disabled{
+        cursor: not-allowed;
     }
 `
