@@ -1,6 +1,6 @@
 import { Container } from "./style"
 
-export function TagsCofee(props: any) {
+export function TagsCoffee(props: any) {
 
     return (
         <Container>

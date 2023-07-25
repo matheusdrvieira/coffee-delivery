@@ -1,15 +1,10 @@
-import { ReactNode } from "react";
+import { ButtonPaymentMethodProps } from "../../interfaces";
 import { Container } from "./style";
-
-interface ButtonPaymentMethodProps {
-    icon: ReactNode
-    title: string
-}
 
 export function ButtonPaymentMethod(props: ButtonPaymentMethodProps) {
 
     return (
-        <Container>
+        <Container {...props}>
             {props.icon}
             {props.title}
         </ Container>

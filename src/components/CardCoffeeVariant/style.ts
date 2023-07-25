@@ -67,6 +67,7 @@ export const ButtonRemove = styled.button`
     line-height: 160%;
     text-transform: uppercase;
 
+    cursor: pointer;
     background: ${props => props.theme["BACKGROUND_BASE_BUTTON"]};
 
     :hover{

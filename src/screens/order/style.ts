@@ -209,6 +209,7 @@ export const Button = styled.button`
     font-weight: 700;
    
     text-transform: uppercase;
+    cursor: pointer;
 
     color: ${props => props.theme["WHITE"]};
     background: ${props => props.theme["YELLOW"]};

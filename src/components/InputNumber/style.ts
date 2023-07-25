@@ -28,6 +28,7 @@ export const Container = styled.div`
 
     svg{
         color: ${props => props.theme["PURPLE"]};
+        cursor: pointer;
     }
 
     svg:hover{

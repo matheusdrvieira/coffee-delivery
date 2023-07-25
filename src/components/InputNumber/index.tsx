@@ -1,11 +1,6 @@
-import { InputHTMLAttributes } from "react";
+import { InputNumberProps } from "../../interfaces";
 import { Container } from "./style";
 import { Minus, Plus } from "phosphor-react";
-
-interface InputNumberProps extends InputHTMLAttributes<HTMLInputElement> {
-    count: number;
-    onCountChange: (count: number) => void;
-}
 
 export function InputNumber(props: InputNumberProps) {
     const { count, onCountChange } = props;

@@ -141,24 +141,3 @@ export const Cofees = [
         quantity: 0
     }
 ]
-
-export const ORDER = [
-    {
-        id: 1,
-        cofees: {
-            id: 1,
-            image: imgCofee1,
-            title: "Latte",
-            price: 9.90
-        },
-    },
-    {
-        id: 2,
-        cofees: {
-            id: 2,
-            image: imgCofee6,
-            title: "Latte",
-            price: 9.90
-        },
-    }
-]

@@ -20,6 +20,8 @@ export const Container = styled.button<BackgroundProps>`
     padding: 0.5rem;
     border-radius: 6px;
 
+    cursor: pointer;
+
     background: ${props => props.theme[BACKGROUND_COLOR[props.backgroundColor]]};
 
     span{

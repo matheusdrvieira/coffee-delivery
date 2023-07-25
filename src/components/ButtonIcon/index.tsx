@@ -1,11 +1,5 @@
-import { ReactNode, ButtonHTMLAttributes } from "react";
 import { Container } from "./style";
-
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    icon: ReactNode
-    empty?: number
-    background?: string
-}
+import { ButtonProps } from "../../interfaces";
 
 export function ButtonIcon(props: ButtonProps) {
 

@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
+    width: 11rem;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
     gap: 0.75rem;
@@ -18,6 +19,7 @@ export const Container = styled.button`
     line-height: 160%;
     text-transform: uppercase;
 
+    cursor: pointer;
     background: ${props => props.theme["BACKGROUND_BASE_BUTTON"]};
 
     :hover{

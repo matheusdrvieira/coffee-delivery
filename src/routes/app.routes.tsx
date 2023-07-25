@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Home } from "../screens/home";
-import { FormAddress } from "../screens/formAddress";
+import { Order } from "../screens/order";
 import { FinishedOrder } from "../screens/finishedOrder";
 
 export function AppRoutes() {
@@ -8,8 +8,8 @@ export function AppRoutes() {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/address" element={< FormAddress />} />
-            <Route path="/order" element={< FinishedOrder />} />
+            <Route path="/order" element={< Order />} />
+            <Route path="/finishedOrder" element={< FinishedOrder />} />
         </Routes>
     )
 }

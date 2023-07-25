@@ -3,8 +3,18 @@ import motorbike from "../../assets/Illustration.svg"
 import { Header } from "../../components/Header";
 import { IconSpan } from "../../components/IconSpan";
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
+import { useContext } from "react";
+import { Context } from "../../contexts";
 
 export function FinishedOrder() {
+    const { order } = useContext(Context);
+    const address = order.address ?? undefined;
+
+    const road = address?.road ?? "Não foi possível localizar sua rua";
+    const number = address?.number ?? "Não foi possível localizar seu número";
+    const district = address?.district ?? "Não foi possível localizar seu bairro";
+    const city = address?.city ?? "Não foi possível localizar sua cidade";
+    const uf = address?.uf ?? "Não foi possível localizar seu estado";
 
     return (
         <Container>
@@ -18,10 +28,12 @@ export function FinishedOrder() {
                     <InfoOrder>
                         <div className="boxInfo">
                             <IconSpan icon={<MapPin size={16} color="#fafafa" weight="fill" />} color={"PURPLE"} />
-                            <div>
-                                <p>Entrega em <strong>Rua João Daniel Martinelli, 102</strong></p>
-                                <p>Farrapos - Porto Alegre, RS</p>
-                            </div>
+                            {order.address ?
+                                <div>
+                                    <p>Entrega em <strong>{road}, {number}</strong></p>
+                                    <p>{district} - {city}, {uf}</p>
+                                </div> :
+                                <p><strong>Não foi possível localizar seu endereço</strong></p>}
                         </div>
                         <div className="boxInfo">
                             <IconSpan icon={<Timer size={16} color="#fafafa" weight="fill" />} color={"YELLOW"} />
@@ -34,7 +46,7 @@ export function FinishedOrder() {
                             <IconSpan icon={<CurrencyDollar size={16} color="#fafafa" weight="fill" />} color={"YELLOW_DARK"} />
                             <div>
                                 <p>Pagamento na entrega</p>
-                                <strong>Cartão de Crédito</strong>
+                                <strong>{order.paymentMethod}</strong>
                             </div>
                         </div>
                     </InfoOrder>

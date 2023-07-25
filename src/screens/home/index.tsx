@@ -1,6 +1,6 @@
 import { Box, Container } from "./style";
 import { Header } from "../../components/Header";
-import { CardCofee } from "../../components/CardCofee";
+import { CardCoffee } from "../../components/CardCoffee";
 import { IconSpan } from "../../components/IconSpan";
 import imgCofeeLogoHome from "../../assets/Imagem.svg"
 import { ShoppingCart, Timer, Package, Coffee } from "phosphor-react";
@@ -58,7 +58,7 @@ export function Home() {
                 <section>
                     {
                         Cofees.map(data => (
-                            <CardCofee
+                            <CardCoffee
                                 key={data.id}
                                 data={data}
                             />

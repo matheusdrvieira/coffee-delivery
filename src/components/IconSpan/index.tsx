@@ -1,10 +1,5 @@
-import { ReactNode } from "react";
+import { IconProps } from "../../interfaces";
 import { Container } from "./style";
-
-interface IconProps {
-    icon: ReactNode
-    color: any
-}
 
 export function IconSpan(props: IconProps) {
 
