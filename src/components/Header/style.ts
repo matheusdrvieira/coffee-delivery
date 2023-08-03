@@ -11,6 +11,8 @@ export const Container = styled.header`
         align-items: center;
         gap: 1rem;
 
+        cursor: pointer;
+
         div{
             display: flex;
             align-items: center;
