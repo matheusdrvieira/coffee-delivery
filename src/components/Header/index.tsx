@@ -18,7 +18,7 @@ export function Header() {
             <div className="boxRight">
                 <div>
                     <MapPin size={22} color="#8047F8" weight="fill" />
-                    <p>Porto Alegre, RS</p>
+                    <p>Cidade, UF</p>
                 </div>
                 <Link to="/order">
                     <ButtonIcon icon={<ShoppingCart size={22} color="#c47f17" weight="fill" />} empty={cofeeNumberOfQuantity} />
