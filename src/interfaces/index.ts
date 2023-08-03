@@ -60,3 +60,15 @@ export interface IconProps {
     icon: ReactNode
     color: any
 }
+
+export interface AddressProps {
+    city: string;
+    province: string;
+    country: string;
+    postCode: string;
+    neighbourhood: string;
+    street: string;
+    uf?: string;
+    lat: number;
+    lng: string;
+}

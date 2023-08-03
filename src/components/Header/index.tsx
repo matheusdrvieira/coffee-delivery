@@ -6,23 +6,12 @@ import { useContext, useEffect, useState } from "react";
 import { Context } from "../../contexts";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
-interface Address {
-    city: string;
-    province: string;
-    country: string;
-    postCode: string;
-    neighbourhood: string;
-    street: string;
-    uf?: string;
-    lat: number;
-    lng: string;
-}
+import { AddressProps } from "../../interfaces";
 
 export function Header() {
     const { order } = useContext(Context);
     const cofeeNumberOfQuantity = order.coffees.length
-    const [address, setAddress] = useState<Address>();
+    const [address, setAddress] = useState<AddressProps>();
 
     async function showPosition(position: any) {
         const response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.coords.latitude},${position.coords.longitude}&key=AIzaSyAzWR_hOdgSFQJU856uxQSvgpKkL5Lwp-4`)
